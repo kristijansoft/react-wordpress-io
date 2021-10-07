@@ -1,0 +1,622 @@
+@import 'globals.scss';
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+
+#sidebar .menu-transition {
+  transition: var(--defaultTransition);
+}
+
+#sidebar.menu-transition {
+  // transition: var(--defaultTransition);
+  // transition: width 0.4s, background-color 0.4s;
+  transition: width 0.4s;
+}
+
+#sidebar.menu-transition.active {
+  // transition: left 0.4s ease, top 0.4s ease, height 0.4s ease, width 0.4s ease 0.4s;
+  // transition: padding-top 0.4s ease 0.6s, width 0.4s, background-color 0.4s;
+  transition: padding-top 0.4s ease 0.6s, width 0.4s;
+}
+
+#sidebar #sidebar-top-logo-text {
+  position: absolute;
+  font-weight: bold;
+  top: 25px;
+  left: 25px;
+  font-size: 15px;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-filter: invert(0%);
+  filter: invert(0%);
+}
+
+#sidebar #menu-toggle-div {
+  position: fixed;
+  bottom: 0;
+  width: 55px;
+  height: 100%;
+}
+
+#sidebar #menu-toggle {
+  cursor: pointer;
+  height: 100%;
+  /* width: 100%; */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#sidebar {
+  height: 90%;
+  width: 55px;
+  position: fixed;
+  z-index: 999;
+  top: 5%;
+  left: 3vw;
+  background-color: #fff;
+  color: #000;
+  overflow: hidden;
+  padding-top: 20px;
+  border: 1px solid #e6e6e6;
+}
+.scrolled #sidebar,
+#sidebar.active {
+  left: 0;
+  top: 0;
+  height: 100%;
+  border: 0px solid #e6e6e6;
+  // border-right-width: 1px;
+}
+#sidebar.active {
+  background: rgb(0, 0, 0);
+  color: #fff;
+  width: 100%;
+  padding-top: 100px;
+}
+
+#sidebar.active .logo {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+#sidebar .menu-item {
+  /* display: none; */
+  visibility: hidden;
+}
+
+#sidebar .menu-item {
+  color: #fff;
+  /* font-family: "FuturaLT", sans-serif; */
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 100px;
+  font-size: 80px;
+}
+
+#sidebar .menu-item {
+  transition: var(--defaultVisibilityTransition);
+}
+
+#sidebar.active .menu-language {
+  display: inline;
+  cursor: pointer;
+  /* display: none; */
+  font-size: 20px;
+}
+
+#sidebar.active a {
+  /* display: inline; */
+  visibility: visible;
+  transition-delay: 0.6s;
+  color: #fff;
+}
+
+#sidebar.active a:hover {
+  color: #ffe000;
+}
+
+#sidebar h3 {
+  /* font-family: "FuturaLT", sans-serif; */
+  font-weight: 100;
+  font-size: 16px;
+  letter-spacing: 2px;
+  /*text-transform: uppercase;*/
+  padding: 5px 5px;
+  margin: 0 0 10px 0;
+  line-height: 24px;
+  /* Abs positioning makes it not take up vert space */
+  position: absolute;
+  top: 45%;
+  left: 0;
+  background: none;
+  transform: rotate(270deg);
+}
+
+html[lang='zh'] #sidebar h3,
+html[lang='tc'] #sidebar h3 {
+  font-weight: 500;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+
+#sidebar .logo {
+  position: absolute;
+  top: 15px;
+  left: 8px;
+  width: 40px;
+  -webkit-filter: invert(0%);
+  filter: invert(0%);
+}
+
+#sidebar.active #menu-canvas {
+  visibility: visible;
+  transition: all 0s ease 0.4s;
+}
+.scrolled #sidebar.active #menu-canvas {
+  transition-delay: 0;
+}
+
+#sidebar #menu-canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000;
+  visibility: hidden;
+  transition: all 0s ease;
+}
+
+#sidebar.active .info-section {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+  bottom: 20px;
+  margin-left: 0;
+  padding-left: 100px;
+  padding-right: 55px;
+  font-size: 14px;
+  transition: visibility 0.4s ease 0.6s, opacity 0.4s ease 0.6s;
+}
+
+.scrolled #sidebar.active .info-section {
+  transition-delay: 0.2s;
+}
+
+#sidebar.active .info-section h4 {
+  font-weight: bold;
+  margin-top: -20px;
+  font-size: 14px;
+}
+
+#sidebar.active .sidebar-contact-method {
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+#sidebar.active .sidebar-info {
+  margin-top: 15px;
+}
+
+#sidebar.active .sidebar-info .sidebar-info-title,
+#sidebar.active .sidebar-info .sidebar-info-detail,
+#sidebar.active .sidebar-info .sidebar-info-phone {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+#sidebar .info-section .social-links {
+  visibility: hidden;
+}
+
+#sidebar.active .info-section .social-links {
+  visibility: visible;
+}
+
+#sidebar.active .info-section .social-links a {
+  display: block;
+}
+
+#sidebar .info-section {
+  display: inline;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 20px;
+  margin-left: 85px;
+  padding-right: 55px;
+  font-size: 14px;
+}
+
+#sidebar .close-symbol {
+  position: absolute;
+  left: 12px;
+  bottom: 15px;
+  z-index: 999;
+  width: 32px;
+  height: 32px;
+
+  transition: var(--defaultTransition);
+}
+
+#sidebar .close-symbol:before,
+#sidebar .close-symbol:after {
+  transition: var(--defaultTransition);
+}
+
+#sidebar .close-symbol:before {
+  position: absolute;
+  left: 12px;
+  content: '';
+  width: 2px;
+  height: 28px;
+  top: 92%;
+  top: 0;
+  background-color: black;
+
+  transform: rotate(0deg);
+}
+
+#sidebar .close-symbol:after {
+  position: absolute;
+  left: 20px;
+  content: '';
+  width: 2px;
+  height: 28px;
+  top: 92%;
+  top: 0;
+  background-color: black;
+
+  transform: rotate(-0deg);
+}
+
+#sidebar #menu-toggle:hover .close-symbol:before {
+  transform: translateX(-2px);
+}
+
+#sidebar #menu-toggle:hover .close-symbol:after {
+  transform: translateX(2px);
+}
+
+#sidebar.active .close-symbol {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  z-index: 999;
+}
+
+#sidebar.active .close-symbol:before,
+#sidebar.active .close-symbol:after {
+  position: absolute;
+  left: 15px;
+  top: 0px;
+  content: '';
+  width: 2px;
+  height: 28px;
+  background-color: white;
+}
+
+#sidebar.active .close-symbol:before {
+  transform: rotate(45deg);
+}
+
+#sidebar.active .close-symbol:after {
+  transform: rotate(-45deg);
+}
+
+#sidebar.active #menu-toggle:hover .close-symbol:before {
+  transform: rotate(55deg);
+}
+
+#sidebar.active #menu-toggle:hover .close-symbol:after {
+  transform: rotate(-55deg);
+}
+
+#sidebar .sidebar-hiring {
+  display: none;
+}
+
+#sidebar .sidebar-hiring p {
+  width: 80%;
+}
+
+#sidebar.active .work-work-lab-switch-container {
+  transition: all var(--defaultTransitionDuration) ease 1s;
+
+  opacity: 1;
+  visibility: visible;
+
+  display: block;
+}
+
+#sidebar .work-work-lab-switch-container {
+  opacity: 0;
+  visibility: hidden;
+
+  /*
+  somehow even if visibility: hidden,
+  the button in children still clickable,
+  so have to resort to display: none
+  */
+  display: none;
+}
+
+#sidebar .work-work-lab-switch-for-mobile-container {
+  transition: var(--defaultTransition);
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*
+/* Extra small devices (phones, less than 768px) */
+
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+
+@media only screen and (max-width: 992px) {
+  /*--[ Mobile styles go here]---------------------------*/
+}
+
+/*
+/* .....NavBar: Icon only with coloring/layout.....*/
+
+/*small/medium side display*/
+
+/* .....NavBar: Fully showing nav bar..... */
+
+@media (min-width: 1330px) {
+}
+
+@include media-breakpoint-down(sm) {
+  /*--[ Mobile styles go here]---------------------------*/
+  #sidebar #sidebar-top-logo-text {
+    left: 15px;
+    top: 17px;
+    opacity: 1;
+  }
+  #sidebar #menu-toggle,
+  #sidebar #menu-toggle-div {
+    position: fixed;
+    left: auto;
+    top: 0;
+    height: 55px;
+    width: 55px;
+    right: 0;
+  }
+  #sidebar {
+    height: 55px;
+    width: 100%;
+    /*update scroller margin-left as well*/
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    overflow: hidden;
+    color: #fff;
+    padding-top: 0;
+    border: 0px solid #e6e6e6;
+  }
+  #sidebar.white-bg {
+    color: #000;
+  }
+  .scrolled #sidebar {
+    height: 55px;
+  }
+  #sidebar.active {
+    /*background: rgba(0, 0, 0, 0.9);*/
+    background: black;
+    color: #fff;
+    height: 100%;
+    padding-top: 100px;
+  }
+  #sidebar {
+    border: 0px solid #e6e6e6;
+    border-bottom: 2px solid rgba(230, 230, 230, 0);
+    transition: var(--defaultTransition);
+    #menu-toggle,
+    #logo-toggle,
+    .work-work-lab-switch-for-mobile-container {
+      color: inherit;
+      transition: none;
+    }
+    .logo.menu-transition {
+      top: 0px;
+      opacity: 0;
+    }
+    #menu-toggle {
+      .close-symbol {
+        color: inherit;
+        transition: none;
+        &:before,
+        &:after {
+          background-color: currentColor;
+          transition: none;
+        }
+      }
+    }
+
+    .work-work-lab-switch-for-mobile-container {
+      color: inherit;
+      transition: none;
+
+      .work-to-lab-switch-for-mobile {
+        color: inherit;
+        transition: none;
+
+        .work-to-lab-switch-txt {
+          color: inherit;
+          transition: none;
+          border-right-color: currentColor;
+        }
+      }
+    }
+    .info-section {
+      p {
+        // margin-bottom: 0;
+      }
+      .social-links {
+        display: none;
+      }
+    }
+    .sidebar-contact-method {
+      // margin-top: 25px;
+    }
+  }
+  body.scrolled {
+    #sidebar {
+      color: #000;
+      background-color: #fff;
+      border-bottom: 2px solid rgba(230, 230, 230, 1);
+      &.active {
+        color: #fff;
+      }
+      .logo.menu-transition {
+        top: 10px;
+        opacity: 1;
+      }
+      #sidebar-top-logo-text {
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--defaultTransition);
+      }
+    }
+  }
+  #sidebar h3 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    /*text-transform: uppercase;*/
+    padding: 5px 10px;
+    margin: 0 0 10px 0;
+    line-height: 24px;
+    /* Abs positioning makes it not take up vert space */
+    position: absolute;
+    top: 12px;
+    left: 30%;
+    text-align: center;
+    background: none;
+    transform: rotate(0deg);
+    display: none;
+  }
+  #sidebar.active h3 {
+    top: 12px;
+  }
+  #sidebar.active .menu-item {
+    font-size: 40px;
+    margin-left: 0px;
+    margin-top: 0;
+    visibility: visible;
+  }
+  #sidebar.active .menu-language {
+    display: inline;
+    cursor: pointer;
+    /*display: none;*/
+    font-size: 18px;
+  }
+  #sidebar .logo {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    opacity: 0;
+  }
+  #sidebar.active .info-section h4 {
+    margin-top: 0px;
+    font-size: 14px;
+  }
+  #sidebar.active .info-section p {
+    font-size: 14px;
+  }
+  #sidebar .info-section a {
+    font-size: 14px;
+    color: #fff;
+    opacity: 0;
+  }
+  #sidebar.active .info-section a {
+    opacity: 1;
+  }
+  #sidebar.active .info-section {
+    left: 0px;
+    margin-left: 0px;
+    top: 55%;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    bottom: 0;
+
+    overflow-x: hidden;
+  }
+  #sidebar .sidebar-hiring {
+    display: none;
+  }
+  #sidebar .close-symbol {
+    left: auto;
+    right: 10px;
+    bottom: 10px;
+  }
+  #sidebar .close-symbol:before {
+    left: auto;
+    right: 13px;
+    height: 22px;
+    top: 1px;
+
+    transform: rotate(90deg);
+  }
+  #sidebar .close-symbol:after {
+    left: auto;
+    right: 13px;
+    height: 22px;
+    top: 8px;
+
+    transform: rotate(-90deg);
+  }
+  #sidebar #menu-toggle:hover .close-symbol:before {
+    transform: translateY(-1px) rotate(90deg);
+  }
+  #sidebar #menu-toggle:hover .close-symbol:after {
+    transform: translateY(1px) rotate(-90deg);
+  }
+  #sidebar.active .close-symbol {
+    // left: auto;
+    // right: 0;
+    // bottom: auto;
+    // top: 0;
+
+    top: 16px;
+  }
+  #sidebar.active .close-symbol:before,
+  #sidebar.active .close-symbol:after {
+    // left: auto;
+    // right: 28px;
+    // top: 17px;
+
+    width: 2px;
+    height: 22px;
+  }
+  // keep at 45 deg as hover state will remain after click in mobile
+  #sidebar.active #menu-toggle:hover .close-symbol:before {
+    transform: rotate(45deg);
+  }
+  #sidebar.active #menu-toggle:hover .close-symbol:after {
+    transform: rotate(-45deg);
+  }
+
+  #sidebar .work-work-lab-switch-container {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  #sidebar .work-work-lab-switch-for-mobile-container {
+    opacity: 1;
+    visibility: visible;
+  }
+}

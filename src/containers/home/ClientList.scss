@@ -1,0 +1,61 @@
+@import 'globals.scss';
+
+
+.home-client-list {
+  padding: 2.5% 0 2.5% 0;
+}
+
+.home-client-list .clients {
+
+}
+
+.home-client-list .section-header {
+  padding-top: 10%;
+}
+
+html[lang=en] .home-client-list .title-first-half {
+  font-family: serif;
+}
+
+.home-client-list .title-second-half {
+  font-weight: bold;
+}
+
+.home-client-list .client-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-client-list .client {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  
+  margin-left: -30%;
+}
+
+.home-client-list .client img {
+  object-fit: contain;
+  object-position: center;
+
+  width: 100%;
+}
+
+@include media-breakpoint-down(sm) {
+  .home-client-list .section-header {
+    padding-left: 5%;
+  }
+  .home-client-list .client {
+    margin-left: 0;
+  }
+  .home-client-list .clients .row {
+    justify-content: center;
+  }
+  
+  .home-client-list .client-container {
+    width: 33%;
+  }
+}

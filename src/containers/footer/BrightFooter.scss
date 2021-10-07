@@ -1,0 +1,195 @@
+@import 'globals.scss';
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer {
+  // background: #ffc422;
+  background: #EDEDED;
+  padding: 0 0 30px 0;
+  color: #000;
+  font-size: 14px;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  /* font-family: "FuturaLT", sans-serif; */
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+#footer .footer-slogan {
+  font-weight: bold;
+  line-height: 40px;
+  font-size: 22px;
+}
+
+#footer .footer-top .footer-contact {
+  font-size: 16px;
+}
+
+#footer .footer-top .footer-contact .email,
+#footer .footer-top .footer-social .social-links {
+  height: 50px;
+}
+
+#footer .footer-top .social-links {
+  text-align: left;
+}
+
+#footer .social-media-img {
+  width: 30px;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 16px;
+  display: inline-block;
+  text-decoration: underline;
+  line-height: 1;
+  transition: 0.3s;
+  margin: 0 10px 0 0;
+}
+
+#footer .footer-top .social-links a:hover {
+  color: #232323;
+}
+
+#footer .footer-top .footer-contact .address .address-title {
+  font-weight: bold;
+}
+
+#footer .footer-top .footer-contact .address .address-detail,
+#footer .footer-top .footer-contact .address .address-phone {
+  padding-top: 5px;
+}
+
+#footer .footer-top h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-hotpot-img {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  width: 600px;
+}
+
+#footer .footer-bottom-copyright,
+#footer .footer-bottom-links {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+}
+#footer .footer-bottom-copyright {
+  left: 8.33333333%;
+}
+#footer .footer-bottom-links {
+  right: 8.33333333%;
+  white-space: nowrap;
+}
+#footer .footer-bottom-links a {
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#footer .back-to-top-button {}
+
+#footer .terms-div {
+  overflow: scroll;
+}
+
+#footer #footer-join-us{
+  display: none;
+}
+
+.ReactModalPortal div div{
+  background: white;
+}
+
+@include media-breakpoint-down(md) {
+  /*--[ Mobile styles go here]---------------------------*/
+}
+
+@include media-breakpoint-down(sm) {
+  #footer {
+    min-height: 750px;
+
+    padding: 0 0 30px 0;
+    color: #000;
+    font-size: 14px;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    /* font-family: "FuturaLT", sans-serif; */
+    height: 100%;
+    position: relative;
+  }
+  #footer .footer-top {
+    padding-top: 30px;
+  }
+  #footer .footer-top .social-links {
+    text-align: center;
+  }  
+  #footer .footer-top .social-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  #footer .footer-top .social-links a {
+    flex: 0 0 20%;
+    margin: 0;
+    padding: 0 10px;
+  }
+  #footer .footer-top .footer-info {
+    margin-bottom: 0;
+  }
+  #footer .social-media-img {
+    width: 100%;
+    // margin: 0 10px;
+  }
+  #footer .footer-bottom-copyright,
+  #footer .footer-bottom-links {
+    position: absolute;
+    top: auto;
+    bottom: 15px;
+    height: auto;
+  }
+  #footer .footer-bottom-copyright {
+    left: 0;
+  }
+  #footer .footer-bottom-links {
+    right: 0px;
+    width: auto;
+  }
+  #footer .footer-bottom-links a {}
+  #footer .back-to-top-button {}
+  #footer .footer-hotpot-img {
+    position: absolute;
+    top: 380px;
+    width: 350px;
+    left: 50%;
+    margin-left: -220px;
+
+    opacity: 0.5;
+  }
+}
+
+html[lang=zh] #footer .footer-slogan,
+html[lang=tc] #footer .footer-slogan {
+  font-weight: 900;
+}
